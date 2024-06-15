@@ -1,0 +1,51 @@
+-- Main Library Source
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+-- Notify Button
+game.StarterGui:SetCore("SendNotification", {
+    Title = "pls read"; 
+    Text = "gives cr if u share this script!"; 
+    Icon = ""; 
+    Duration = 120;
+    Callback = bindableFunction;
+    Button1 = "i did";  
+})
+
+-- Name Script
+local Window = Library:NewWindow("Natural Disaster")
+
+-- Section - Main
+local Section = Window:NewSection("Main")
+
+-- Toggles AutoWin (Lobby)
+Section:CreateToggle("AutoWin (Lobby)", function(value)
+    _G.autowinfarm = value;
+         while wait(.100) do
+             if _G.autowinfarm == true and  game.Players.LocalPlayer.Character and  game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-319.1171569824219, 179.68675231933594, 388.9110107421875)
+        end
+    end
+end)
+
+-- Toggles AutoWin (Sky)
+Section:CreateToggle("AutoWin (Sky)", function(value)
+    while wait (value) do
+
+        local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local location = CFrame.new(511, 481, -552)
+        local humanoid = game.Players.LocalPlayer.Character.Humanoid
+        humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+        wait(0.1)
+        pl.CFrame = location
+        
+        end
+
+end)
+
+-- Button AntiAFK
+Section:CreateButton("Anti AFK", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/3ndermybel0ved/discord.gg-SAcF7HEnyc/main/antiafk.lua'),true))()
+end)
+
+-- Section - Credit
+local Section = Window:NewSection("YT: 3ndermybel0ved")
